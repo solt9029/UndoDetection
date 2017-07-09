@@ -1,0 +1,30 @@
+*test
+    cls
+    
+    index=0
+    
+    dim pushed_keys
+    
+    repeat 121
+        getkey key,cnt+1
+        if(key=1){
+            pushed_keys(index)=cnt+1
+            index++
+        }
+    loop
+    
+    repeat length(pushed_keys)
+    	mes pushed_keys(cnt)
+    loop
+    
+ 	if(length(pushed_keys)==2){
+	 	if(pushed_keys(0)==17 && pushed_keys(1)==90){
+		 	dialog "Undo"
+		}
+		if(pushed_keys(1)==17 && pushed_keys(0)==90){
+			dialog "Undo"
+		}
+	}
+    
+    await 1
+goto *test
